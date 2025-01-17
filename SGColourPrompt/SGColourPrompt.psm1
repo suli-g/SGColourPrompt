@@ -17,10 +17,6 @@
 .VERSION
     1.0.0
 #>
-import-module -name background_colour
-import-module -name foreground_colour
-
-
 function prompt {
     <#
     .SYNOPSIS
