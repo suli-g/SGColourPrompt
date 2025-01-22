@@ -56,7 +56,7 @@ This module also provides the following functions when [in use](#usage):
 |---|---|---|
 |`background_colour`|`bgc`|Sets a background colour for the given text.|
 |`foreground_colour`|`fgc`|Sets a foreground colour for the given text.|
-|`prompt`|-|Customises the PowerShell prompt.[^1]|
+|`use-colour`|-|Used to restyle the powershell prompt.[^1]|
 
 [^1]: <https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_prompts?view=powershell-7.4>
 
@@ -68,7 +68,7 @@ This module also provides the following functions when [in use](#usage):
    - Git branch (if applicable)
    - Git status indicators:
     - No changes (green)
-    - Unstaged changes (yellow)
+    - Unstaged changes (red)
     - Staged changes (yellow)
     - Untracked files (red)
 

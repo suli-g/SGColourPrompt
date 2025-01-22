@@ -17,7 +17,7 @@
 .VERSION
     1.0.0
 #>
-function prompt {
+function use-colour {
     <#
     .SYNOPSIS
         Customises the PowerShell prompt.

@@ -12,7 +12,7 @@
     RootModule = 'SGColourPrompt.psm1'
 
     # Version number of this module.
-    ModuleVersion     = '2.0'
+    ModuleVersion     = '2.1'
 
     # Supported PSEditions
     # CompatiblePSEditions = @()
@@ -69,7 +69,7 @@
     NestedModules = @('background_colour.psm1', 'foreground_colour.psm1')
 
     # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
-    FunctionsToExport = @('background_colour', 'foreground_colour', 'prompt')
+    FunctionsToExport = @('background_colour', 'foreground_colour', 'use-colour')
 
     # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
     CmdletsToExport   = @()
@@ -127,6 +127,5 @@
 
     # Default prefix for commands exported from this module. Override the default prefix using Import-Module -Prefix.
     # DefaultCommandPrefix = ''
-
 }
 
