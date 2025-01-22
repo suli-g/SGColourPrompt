@@ -48,7 +48,9 @@ function use-colour {
     
     # Use the branch name in the prompt or "..." if the branch
     # cannot be determined (possible if no commits have been made):
-    $branch_name = ((git branch) -replace '\* ', '')  # Remove the leading "* "
+    # Remove the need to replace the * by showing only the current branch.
+    # Reference: https://stackoverflow.com/a/6245587
+    $branch_name = (git branch --show-current)
     $branch_name = if ($null -eq $branch_name) { "..." } else { $branch_name }
     
     # Check if there are any tracked or untracked changes:

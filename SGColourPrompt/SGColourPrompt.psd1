@@ -12,7 +12,7 @@
     RootModule = 'SGColourPrompt.psm1'
 
     # Version number of this module.
-    ModuleVersion     = '2.2'
+    ModuleVersion     = '2.2.1'
 
     # Supported PSEditions
     # CompatiblePSEditions = @()
