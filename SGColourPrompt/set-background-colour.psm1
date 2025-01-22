@@ -10,7 +10,7 @@
     background_colour - Sets a background colour for the given text.
 #>
 
-function background_colour {
+function set-background-colour {
     <#
     .SYNOPSIS
         Sets a background colour for the given text.

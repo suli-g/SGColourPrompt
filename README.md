@@ -82,13 +82,23 @@ function prompt {
 This module also provides the following functions when [in use](#usage):
 |Function|Alias|Effect|
 |---|---|---|
-|`background_colour`|`bgc`|Sets a background colour for the given text.|
-|`foreground_colour`|`fgc`|Sets a foreground colour for the given text.|
+|`set-background-colour`|`bgc`|Sets a background colour for the given text.|
+|`set-foreground-colour`|`fgc`|Sets a foreground colour for the given text.|
 |`use-colour`|-|Used to restyle the powershell prompt.[^1]|
 
 [^1]: <https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_prompts?view=powershell-7.4>
 
-- `foreground_colour`: Sets a foreground colour for the given text.
+- For more information about the above-mentioned functions, use the `Get-Help` command.
+
+Example:
+
+```powershell
+get-help set-background-colour
+get-help set-foreground-colour
+get-help fgc
+get-help bgc
+get-help use-colour
+```
 
 2. Enjoy your newly styled prompt! It should automatically update and adapt to show contextual information like:
 

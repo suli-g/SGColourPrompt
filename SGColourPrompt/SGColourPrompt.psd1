@@ -66,10 +66,10 @@
     # FormatsToProcess = @()
 
     # Modules to import as nested modules of the module specified in RootModule/ModuleToProcess
-    NestedModules = @('background_colour.psm1', 'foreground_colour.psm1')
+    NestedModules = @('set-background-colour.psm1', 'set-foreground-colour.psm1')
 
     # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
-    FunctionsToExport = @('background_colour', 'foreground_colour', 'use-colour')
+    FunctionsToExport = @('set-background-colour', 'set-foreground-colour', 'use-colour')
 
     # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
     CmdletsToExport   = @()
@@ -87,7 +87,7 @@
     # ModuleList = @()
 
     # List of all files packaged with this module
-    FileList          = @('background_colour.psm1', 'foreground_colour.psm1', 'SGColourPrompt.psm1')
+    FileList          = @('set-background-colour.psm1', 'set-foreground-colour.psm1', 'SGColourPrompt.psm1')
 
     # Private data to pass to the module specified in RootModule/ModuleToProcess. This may also contain a PSData hashtable with additional module metadata used by PowerShell.
     PrivateData       = @{

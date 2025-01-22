@@ -10,7 +10,7 @@
     foreground_colour - Sets a foreground colour for the given text.
 #>
 
-function foreground_colour {
+function set-foreground-colour {
     <#
     .SYNOPSIS
         Sets a foreground colour for the given text.
