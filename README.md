@@ -23,10 +23,6 @@ To install the module via the PowerShell Gallery:
 Install-Module SGColourPrompt
 ```
 
-After installation, your prompt should look as follows:
-
-![SGColourPrompt](./images/SGColourPrompt.png)
-
 ### Via Cloning The Repo
 
 Alternatively, clone the repository from GitHub:
@@ -35,19 +31,51 @@ Alternatively, clone the repository from GitHub:
 git clone https://github.com/suli-g/SGColourPrompt.git
 ```
 
+You may then access the module from the cloned directory by using the `import-module` command in windows powershell.
+
+```powershell
+Import-Module path/to/SGColourPrompt
+```
+
 ## Usage
 
 ### If you installed the module [via powershell gallery](#powershell)
 
-- The `prompt` function should take effect immediately.
+- You should have immediate access to the `use-colour` function.
 
-### If you [cloned the repo](#via-cloning-the-repo)
+### Enabling the Coloured Prompt
+
+After installation, define a `prompt` function in your PowerShell profile that uses
+the use-colour function:
+
+1. Open the `$PROFILE` file in your editor of choice:
+
+> The `$PROFILE` environment variable contains the path to the current user's 
+> PowerShell profile file and is accessible from any Powershell session.
+
+```powershell
+notepad $PROFILE
+```
+
+2. If you If you [cloned this repository](#via-cloning-the-repo), you'll need to first import the module into your profile.
 
 - You'll need to import the module via the following command:
 
 ```powershell
 Import-Module path/to/SGColourPrompt
 ```
+
+3. Add the following to the file:
+
+```powershell
+function prompt {
+   use-colour
+}
+```
+
+3. Open a new Powershell window, and your prompt should look as follows:
+
+![SGColourPrompt](./images/SGColourPrompt.png)
 
 ### Colour Functions
 
