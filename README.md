@@ -27,7 +27,7 @@ Install-Module SGColourPrompt
 
 Alternatively, clone the repository from GitHub:
 
-```powershell
+```sh
 git clone https://github.com/suli-g/SGColourPrompt.git
 ```
 
