@@ -35,27 +35,39 @@ function prompt {
         <main> PS [example]> git branch
         >> * main
     #>
-    $leaf = (split-path -path $pwd -leaf)
-    $leaf = if ($leaf -eq [Environment]::UserName) { "~" } else { $leaf }
-    $branch = (background_colour "<×>" 245 100 120)
-    
-    # Check if working directory is a git repository:
+    # Get the current path and branch name. Replace username with ~:
+    $path_leaf = (split-path -path $pwd -leaf)
+    $path_leaf = if ($path_leaf -eq [Environment]::UserName) { "~" } else { $path_leaf }
+
+    # Exit early if the current directory is not a git repository:
     # Reference: https://stackoverflow.com/questions/2180270
-    if ((git rev-parse --is-inside-work-tree) -eq $true) {
-        # Use the branch name in the prompt or "..." if the branch
-        # cannot be determined:
-        $branch_name = ((git branch) -replace '\* ', '')
-        $branch_name = if ($branch_name -eq "") { "..." } else { $branch_name }
-        $has_untracked = ($null -eq (git status --untracked-files=no --short))
-        
-        # Use different colours for the branch name depending on whether
-        # it has untracked changes:
-        $branch = if ($has_untracked) { 
-            background_colour "<$branch_name>" 100 245 120 
-        } else { 
-            background_colour "<$branch_name>" 245 120 0 
-        }
+    $not_git_repo = -not (git rev-parse --is-inside-work-tree)
+    if ($not_git_repo) {
+        return "PS [$path_leaf]> "
     }
     
-    return "$branch PS [$leaf]> "
+    # Use the branch name in the prompt or "..." if the branch
+    # cannot be determined (possible if no commits have been made):
+    $branch_name = ((git branch) -replace '\* ', '')  # Remove the leading "* "
+    $branch_name = if ($null -eq $branch_name) { "..." } else { $branch_name }
+    
+    # Check if there are any tracked or untracked changes:
+    # Reference: https://stackoverflow.com/a/3801554
+    $tracked_changes = $null -ne (git status --short)
+    $untracked_changes = $null -ne (git ls-files --others --exclude-standard)
+    
+    # Use different colours for the branch name depending on whether
+    # it has untracked changes:
+    $branch = if ($untracked_changes -and $tracked_changes) { 
+        background_colour "<$branch_name>" 245 100 180
+    } elseif ($untracked_changes) {
+        background_colour "<$branch_name>" 245 80 80
+    } elseif ($tracked_changes) { 
+        background_colour "<$branch_name>" 245 180 100
+    } else { 
+        background_colour "<$branch_name>" 100 245 120
+    }
+    
+    return "$branch PS [$path_leaf]> "
 }
+
