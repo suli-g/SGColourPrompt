@@ -10,7 +10,7 @@
     foreground_colour - Sets a foreground colour for the given text.
 #>
 
-function set-foreground-colour {
+function Set-ForegroundColour {
     <#
     .SYNOPSIS
         Sets a foreground colour for the given text.
@@ -40,4 +40,4 @@ function set-foreground-colour {
     $colour = $PSStyle.Foreground.FromRgb($red, $green, $blue)
     return "$colour$text$($PSStyle.Reset)"
 }
-set-alias fgc foreground_colour
+set-alias fgc Set-ForegroundColour

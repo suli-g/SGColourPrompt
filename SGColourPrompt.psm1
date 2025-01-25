@@ -17,7 +17,7 @@
 .VERSION
     1.0.0
 #>
-function use-colour {
+function Use-Colour {
     <#
     .SYNOPSIS
         Customises the PowerShell prompt.
@@ -46,12 +46,9 @@ function use-colour {
         return "PS [$path_leaf]> "
     }
     
-    # Use the branch name in the prompt or "..." if the branch
-    # cannot be determined (possible if no commits have been made):
-    # Remove the need to replace the * by showing only the current branch.
+    # Get the current git branch name to include in the prompt:
     # Reference: https://stackoverflow.com/a/6245587
     $branch_name = (git branch --show-current)
-    $branch_name = if ($null -eq $branch_name) { "..." } else { $branch_name }
     
     # Check if there are any tracked or untracked changes:
     # Reference: https://stackoverflow.com/a/3801554
@@ -61,13 +58,13 @@ function use-colour {
     # Use different colours for the branch name depending on whether
     # it has untracked changes:
     $branch = if ($untracked_changes -and $tracked_changes) { 
-        background_colour "<$branch_name>" 245 100 180
+        set-foreground-colour "<$branch_name>" 245 100 180
     } elseif ($untracked_changes) {
-        background_colour "<$branch_name>" 245 80 80
+        set-foreground-colour "<$branch_name>" 245 80 80
     } elseif ($tracked_changes) { 
-        background_colour "<$branch_name>" 245 180 100
+        set-foreground-colour "<$branch_name>" 245 180 100
     } else { 
-        background_colour "<$branch_name>" 100 245 120
+        set-foreground-colour "<$branch_name>" 100 245 120
     }
     
     return "$branch PS [$path_leaf]> "

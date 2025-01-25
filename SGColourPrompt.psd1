@@ -12,7 +12,7 @@
     RootModule = 'SGColourPrompt.psm1'
 
     # Version number of this module.
-    ModuleVersion     = '2.3'
+    ModuleVersion     = '3.1.0'
 
     # Supported PSEditions
     # CompatiblePSEditions = @()
@@ -66,10 +66,10 @@
     # FormatsToProcess = @()
 
     # Modules to import as nested modules of the module specified in RootModule/ModuleToProcess
-    NestedModules = @('set-background-colour.psm1', 'set-foreground-colour.psm1')
+    NestedModules = @('SetBackgroundColour.psm1', 'SetForegroundColour.psm1')
 
     # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
-    FunctionsToExport = @('set-background-colour', 'set-foreground-colour', 'use-colour')
+    FunctionsToExport = @('Set-BackgroundColour', 'Set-ForegroundColour', 'Use-Colour')
 
     # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
     CmdletsToExport   = @()
@@ -87,7 +87,7 @@
     # ModuleList = @()
 
     # List of all files packaged with this module
-    FileList          = @('set-background-colour.psm1', 'set-foreground-colour.psm1', 'SGColourPrompt.psm1')
+    FileList          = @('SetBackgroundColour.psm1', 'SetForegroundColour.psm1', 'SGColourPrompt.psm1')
 
     # Private data to pass to the module specified in RootModule/ModuleToProcess. This may also contain a PSData hashtable with additional module metadata used by PowerShell.
     PrivateData       = @{

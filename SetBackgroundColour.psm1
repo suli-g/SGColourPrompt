@@ -10,7 +10,7 @@
     background_colour - Sets a background colour for the given text.
 #>
 
-function set-background-colour {
+function Set-BackgroundColour {
     <#
     .SYNOPSIS
         Sets a background colour for the given text.
@@ -37,4 +37,4 @@ function set-background-colour {
     $colour = $PSStyle.Background.FromRgb($red, $green, $blue)
     return "$colour$text$($PSStyle.Reset)"
 }
-set-alias bgc background_colour
+set-alias bgc Set-BackgroundColour
