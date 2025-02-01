@@ -58,13 +58,13 @@ function Use-Colour {
     # Use different colours for the branch name depending on whether
     # it has untracked changes:
     $branch = if ($untracked_changes -and $tracked_changes) { 
-        set-foreground-colour "<$branch_name>" 245 100 180
+        set-foregroundColour "<$branch_name>" 245 100 180
     } elseif ($untracked_changes) {
-        set-foreground-colour "<$branch_name>" 245 80 80
+        set-foregroundColour "<$branch_name>" 245 80 80
     } elseif ($tracked_changes) { 
-        set-foreground-colour "<$branch_name>" 245 180 100
+        set-foregroundColour "<$branch_name>" 245 180 100
     } else { 
-        set-foreground-colour "<$branch_name>" 100 245 120
+        set-foregroundColour "<$branch_name>" 100 245 120
     }
     
     return "$branch PS [$path_leaf]> "
