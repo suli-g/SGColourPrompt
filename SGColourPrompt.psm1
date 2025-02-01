@@ -47,6 +47,7 @@ function Use-Colour {
     }
     
     # Get the current git branch name to include in the prompt:
+    # Get the current git branch name to include in the prompt:
     # Reference: https://stackoverflow.com/a/6245587
     $branch_name = (git branch --show-current)
     
